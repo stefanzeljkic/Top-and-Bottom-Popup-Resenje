@@ -1,0 +1,20 @@
+# NOTES — Top and Bottom Popup - Resenje (routine status)
+
+## 2026-11-08
+- WordPress.org review (ID R top-and-bottom-popup-resenje/stefanzeljkic/20Jun25, last mail June 2025) was still open.
+  The repo held an OLDER version than the last upload (the reviewed one had register_setting + ABSPATH).
+- Rewrote the plugin as 1.1.0 to fix every review point:
+  - CSS/JS via wp_enqueue_style/wp_enqueue_script + wp_add_inline_style/wp_add_inline_script (assets/css/popup.css, assets/js/popup.js; defer, footer).
+  - One option `popup_resenje_settings` via register_setting() with sanitize_callback (wp_kses_post, whitelist, absint, hex colors, regex for CSS sizes).
+  - Settings API form (options.php) → no more slashed HTML; all output escaped late; ABSPATH guard; uninstall.php; 1.0 options read as fallback.
+  - Headers "Requires at least: 5.0" / "Requires PHP: 7.0" in main file = readme.txt; Tested up to 7.1.
+  - Main file renamed to top-and-bottom-popup-resenje.php; zip built by build-zip.sh as dist/top-and-bottom-popup-resenje.zip (zip no longer in git).
+- Tests (WordPress 7.1.4 + PHP 8.3 in Docker on CT 270, /opt/tbp): Plugin Check 0 errors (incl. experimental/low severity),
+  PHPCS WordPress standard clean (php/js/css), PHPCompatibilityWP 7.0+ OK, php -l on PHP 7.0 OK, Gitleaks 0,
+  functional: CSS injection in width rejected, <script>/<style> stripped, popup show/close/interval works in browser.
+- Donation links (Patreon, Buy Me a Coffee, Ko-fi) checked: all working.
+
+## Open
+- Upload dist zip at https://wordpress.org/plugins/developers/add/ and reply to the review mail (Stefan logs in; Chrome).
+- Push to GitHub + GitHub release 1.1.0 only when Stefan says.
+- Test stack on CT 270: `cd /opt/tbp && docker compose down -v` when no longer needed.

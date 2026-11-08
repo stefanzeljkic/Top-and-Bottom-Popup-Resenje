@@ -1,0 +1,57 @@
+/* Top and Bottom Popup - Resenje: base layout. Per-popup sizes and colors are added inline from the settings. */
+.popup-resenje {
+	position: fixed;
+	z-index: 9999;
+	box-sizing: border-box;
+	max-width: calc(100% - 40px);
+	overflow: auto;
+}
+
+.popup-resenje[hidden] {
+	display: none !important;
+}
+
+.popup-resenje--top {
+	top: 30px;
+}
+
+.popup-resenje--bottom {
+	bottom: 30px;
+}
+
+.popup-resenje--left {
+	left: 20px;
+}
+
+.popup-resenje--right {
+	right: 20px;
+}
+
+.popup-resenje--center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.popup-resenje__close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: inherit;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.popup-resenje {
+		width: 90% !important;
+		max-width: 90%;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+	}
+}
