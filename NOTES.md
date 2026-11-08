@@ -15,6 +15,6 @@
 - Donation links (Patreon, Buy Me a Coffee, Ko-fi) checked: all working.
 
 ## Open
-- Upload dist zip at https://wordpress.org/plugins/developers/add/ and reply to the review mail (Stefan logs in; Chrome).
+- 2026-11-08: SUBMITTED as a NEW submission (old one was closed). Automated scan: Pass. Slug top-and-bottom-popup-resenje, version 1.1.0, status Awaiting Review (~655 in queue, 1–10 days). Review mail goes to stefan.zeljkic@resenje.rs ("Review in Progress: Top and Bottom Popup – Resenje"). Possible objection: Guideline 18 (many popup plugins).
 - Push to GitHub + GitHub release 1.1.0 only when Stefan says.
 - Test stack on CT 270: `cd /opt/tbp && docker compose down -v` when no longer needed.
