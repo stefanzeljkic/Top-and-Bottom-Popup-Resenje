@@ -16,5 +16,5 @@
 
 ## Open
 - 2026-11-08: SUBMITTED as a NEW submission (old one was closed). Automated scan: Pass. Slug top-and-bottom-popup-resenje, version 1.1.0, status Awaiting Review (~655 in queue, 1–10 days). Review mail goes to stefan.zeljkic@resenje.rs ("Review in Progress: Top and Bottom Popup – Resenje"). Possible objection: Guideline 18 (many popup plugins).
-- Push to GitHub + GitHub release 1.1.0 only when Stefan says.
+- 2026-11-08: pushed to main + GitHub release 1.1.0 (zip asset) on Stefan's ok. Next: wait for the WordPress.org review mail, fix whatever they ask, re-upload on the same page.
 - Test stack on CT 270: `cd /opt/tbp && docker compose down -v` when no longer needed.
