@@ -1,25 +1,25 @@
 <?php
 /**
- * Plugin Name:       Top and Bottom Popup - Resenje
+ * Plugin Name:       Resenje Top and Bottom Popup
  * Plugin URI:        https://github.com/stefanzeljkic/Top-and-Bottom-Popup-Resenje
  * Description:       Shows two independent popups (top and bottom of the page) with your own HTML content and separate style settings.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 5.0
  * Requires PHP:      7.0
  * Author:            Stefan Zeljkic
  * Author URI:        https://github.com/stefanzeljkic
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       top-and-bottom-popup-resenje
+ * Text Domain:       resenje-top-bottom-popup
  *
- * @package TopAndBottomPopupResenje
+ * @package ResenjeTopBottomPopup
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'POPUP_RESENJE_VERSION', '1.1.0' );
+define( 'POPUP_RESENJE_VERSION', '1.1.1' );
 define( 'POPUP_RESENJE_OPTION', 'popup_resenje_settings' );
 
 /**
@@ -196,8 +196,8 @@ add_action( 'admin_init', 'popup_resenje_register_settings' );
  */
 function popup_resenje_admin_menu() {
 	add_menu_page(
-		__( 'Popup Resenje', 'top-and-bottom-popup-resenje' ),
-		__( 'Popup Resenje', 'top-and-bottom-popup-resenje' ),
+		__( 'Popup Resenje', 'resenje-top-bottom-popup' ),
+		__( 'Popup Resenje', 'resenje-top-bottom-popup' ),
 		'manage_options',
 		'popup-resenje',
 		'popup_resenje_admin_page',
@@ -214,7 +214,7 @@ add_action( 'admin_menu', 'popup_resenje_admin_menu' );
  */
 function popup_resenje_action_links( $links ) {
 	$url = admin_url( 'admin.php?page=popup-resenje' );
-	array_unshift( $links, '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'top-and-bottom-popup-resenje' ) . '</a>' );
+	array_unshift( $links, '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'resenje-top-bottom-popup' ) . '</a>' );
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'popup_resenje_action_links' );
@@ -229,17 +229,17 @@ function popup_resenje_admin_page() {
 
 	$settings = popup_resenje_get_settings();
 	$labels   = array(
-		'top'    => __( 'Top Popup', 'top-and-bottom-popup-resenje' ),
-		'bottom' => __( 'Bottom Popup', 'top-and-bottom-popup-resenje' ),
+		'top'    => __( 'Top Popup', 'resenje-top-bottom-popup' ),
+		'bottom' => __( 'Bottom Popup', 'resenje-top-bottom-popup' ),
 	);
 	$aligns   = array(
-		'left'   => __( 'Left', 'top-and-bottom-popup-resenje' ),
-		'center' => __( 'Center', 'top-and-bottom-popup-resenje' ),
-		'right'  => __( 'Right', 'top-and-bottom-popup-resenje' ),
+		'left'   => __( 'Left', 'resenje-top-bottom-popup' ),
+		'center' => __( 'Center', 'resenje-top-bottom-popup' ),
+		'right'  => __( 'Right', 'resenje-top-bottom-popup' ),
 	);
 	?>
 	<div class="wrap">
-		<h1><?php esc_html_e( 'Popup Settings', 'top-and-bottom-popup-resenje' ); ?></h1>
+		<h1><?php esc_html_e( 'Popup Settings', 'resenje-top-bottom-popup' ); ?></h1>
 		<form method="post" action="options.php">
 			<?php settings_fields( 'popup_resenje_group' ); ?>
 			<?php
@@ -251,18 +251,18 @@ function popup_resenje_admin_page() {
 				<h2><?php echo esc_html( $label ); ?></h2>
 				<table class="form-table" role="presentation">
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Enable', 'top-and-bottom-popup-resenje' ); ?></th>
-						<td><label><input type="checkbox" name="<?php echo esc_attr( $name . '[enable]' ); ?>" value="1" <?php checked( $s['enable'] ); ?>> <?php esc_html_e( 'Show this popup', 'top-and-bottom-popup-resenje' ); ?></label></td>
+						<th scope="row"><?php esc_html_e( 'Enable', 'resenje-top-bottom-popup' ); ?></th>
+						<td><label><input type="checkbox" name="<?php echo esc_attr( $name . '[enable]' ); ?>" value="1" <?php checked( $s['enable'] ); ?>> <?php esc_html_e( 'Show this popup', 'resenje-top-bottom-popup' ); ?></label></td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="<?php echo esc_attr( $id . '-content' ); ?>"><?php esc_html_e( 'Content', 'top-and-bottom-popup-resenje' ); ?></label></th>
+						<th scope="row"><label for="<?php echo esc_attr( $id . '-content' ); ?>"><?php esc_html_e( 'Content', 'resenje-top-bottom-popup' ); ?></label></th>
 						<td>
 							<textarea id="<?php echo esc_attr( $id . '-content' ); ?>" name="<?php echo esc_attr( $name . '[content]' ); ?>" rows="6" class="large-text code"><?php echo esc_textarea( $s['content'] ); ?></textarea>
-							<p class="description"><?php esc_html_e( 'HTML allowed in posts. Style elements with inline style attributes, e.g. <p style="font-size:18px">.', 'top-and-bottom-popup-resenje' ); ?></p>
+							<p class="description"><?php esc_html_e( 'HTML allowed in posts. Style elements with inline style attributes, e.g. <p style="font-size:18px">.', 'resenje-top-bottom-popup' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="<?php echo esc_attr( $id . '-position' ); ?>"><?php esc_html_e( 'Alignment', 'top-and-bottom-popup-resenje' ); ?></label></th>
+						<th scope="row"><label for="<?php echo esc_attr( $id . '-position' ); ?>"><?php esc_html_e( 'Alignment', 'resenje-top-bottom-popup' ); ?></label></th>
 						<td>
 							<select id="<?php echo esc_attr( $id . '-position' ); ?>" name="<?php echo esc_attr( $name . '[position]' ); ?>">
 								<?php foreach ( $aligns as $value => $text ) : ?>
@@ -272,18 +272,18 @@ function popup_resenje_admin_page() {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="<?php echo esc_attr( $id . '-interval' ); ?>"><?php esc_html_e( 'Show again after (seconds)', 'top-and-bottom-popup-resenje' ); ?></label></th>
+						<th scope="row"><label for="<?php echo esc_attr( $id . '-interval' ); ?>"><?php esc_html_e( 'Show again after (seconds)', 'resenje-top-bottom-popup' ); ?></label></th>
 						<td>
 							<input type="number" id="<?php echo esc_attr( $id . '-interval' ); ?>" name="<?php echo esc_attr( $name . '[interval]' ); ?>" value="<?php echo esc_attr( $s['interval'] ); ?>" min="0" max="31536000">
-							<p class="description"><?php esc_html_e( 'How long the popup stays hidden after a visitor closes it. 0 = show on every page load.', 'top-and-bottom-popup-resenje' ); ?></p>
+							<p class="description"><?php esc_html_e( 'How long the popup stays hidden after a visitor closes it. 0 = show on every page load.', 'resenje-top-bottom-popup' ); ?></p>
 						</td>
 					</tr>
 					<?php
 					$text_fields = array(
-						'width'   => __( 'Width (e.g. 300px or 80%)', 'top-and-bottom-popup-resenje' ),
-						'height'  => __( 'Height (e.g. auto or 200px)', 'top-and-bottom-popup-resenje' ),
-						'padding' => __( 'Padding (e.g. 20px or 10px 20px)', 'top-and-bottom-popup-resenje' ),
-						'radius'  => __( 'Border radius (e.g. 8px)', 'top-and-bottom-popup-resenje' ),
+						'width'   => __( 'Width (e.g. 300px or 80%)', 'resenje-top-bottom-popup' ),
+						'height'  => __( 'Height (e.g. auto or 200px)', 'resenje-top-bottom-popup' ),
+						'padding' => __( 'Padding (e.g. 20px or 10px 20px)', 'resenje-top-bottom-popup' ),
+						'radius'  => __( 'Border radius (e.g. 8px)', 'resenje-top-bottom-popup' ),
 					);
 					foreach ( $text_fields as $field => $field_label ) :
 						?>
@@ -293,11 +293,11 @@ function popup_resenje_admin_page() {
 						</tr>
 					<?php endforeach; ?>
 					<tr>
-						<th scope="row"><label for="<?php echo esc_attr( $id . '-bg' ); ?>"><?php esc_html_e( 'Background color', 'top-and-bottom-popup-resenje' ); ?></label></th>
+						<th scope="row"><label for="<?php echo esc_attr( $id . '-bg' ); ?>"><?php esc_html_e( 'Background color', 'resenje-top-bottom-popup' ); ?></label></th>
 						<td><input type="color" id="<?php echo esc_attr( $id . '-bg' ); ?>" name="<?php echo esc_attr( $name . '[bg]' ); ?>" value="<?php echo esc_attr( $s['bg'] ); ?>"></td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="<?php echo esc_attr( $id . '-color' ); ?>"><?php esc_html_e( 'Text and close button color', 'top-and-bottom-popup-resenje' ); ?></label></th>
+						<th scope="row"><label for="<?php echo esc_attr( $id . '-color' ); ?>"><?php esc_html_e( 'Text and close button color', 'resenje-top-bottom-popup' ); ?></label></th>
 						<td><input type="color" id="<?php echo esc_attr( $id . '-color' ); ?>" name="<?php echo esc_attr( $name . '[color]' ); ?>" value="<?php echo esc_attr( $s['color'] ); ?>"></td>
 					</tr>
 				</table>
@@ -306,12 +306,12 @@ function popup_resenje_admin_page() {
 			<?php submit_button(); ?>
 		</form>
 
-		<h2><?php esc_html_e( 'Support Development', 'top-and-bottom-popup-resenje' ); ?></h2>
-		<p><?php esc_html_e( 'If you find this plugin useful, please consider supporting future updates and development:', 'top-and-bottom-popup-resenje' ); ?></p>
+		<h2><?php esc_html_e( 'Support Development', 'resenje-top-bottom-popup' ); ?></h2>
+		<p><?php esc_html_e( 'If you find this plugin useful, please consider supporting future updates and development:', 'resenje-top-bottom-popup' ); ?></p>
 		<p>
-			<a href="<?php echo esc_url( 'https://www.patreon.com/user?u=76138587' ); ?>" class="button" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Donate via Patreon', 'top-and-bottom-popup-resenje' ); ?></a>
-			<a href="<?php echo esc_url( 'https://buymeacoffee.com/stefanzeljkic' ); ?>" class="button" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Buy Me a Coffee', 'top-and-bottom-popup-resenje' ); ?></a>
-			<a href="<?php echo esc_url( 'https://ko-fi.com/stefanzeljkic' ); ?>" class="button" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Support on Ko-fi', 'top-and-bottom-popup-resenje' ); ?></a>
+			<a href="<?php echo esc_url( 'https://www.patreon.com/user?u=76138587' ); ?>" class="button" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Donate via Patreon', 'resenje-top-bottom-popup' ); ?></a>
+			<a href="<?php echo esc_url( 'https://buymeacoffee.com/stefanzeljkic' ); ?>" class="button" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Buy Me a Coffee', 'resenje-top-bottom-popup' ); ?></a>
+			<a href="<?php echo esc_url( 'https://ko-fi.com/stefanzeljkic' ); ?>" class="button" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Support on Ko-fi', 'resenje-top-bottom-popup' ); ?></a>
 		</p>
 	</div>
 	<?php
@@ -392,8 +392,8 @@ function popup_resenje_render_popups() {
 	foreach ( popup_resenje_enabled_popups() as $pos => $popup ) {
 		$classes = 'popup-resenje popup-resenje--' . $pos . ' popup-resenje--' . $popup['position'];
 		?>
-		<div id="<?php echo esc_attr( 'popup-resenje-' . $pos ); ?>" class="<?php echo esc_attr( $classes ); ?>" role="dialog" aria-label="<?php echo esc_attr( 'top' === $pos ? __( 'Top popup', 'top-and-bottom-popup-resenje' ) : __( 'Bottom popup', 'top-and-bottom-popup-resenje' ) ); ?>" hidden>
-			<button type="button" class="popup-resenje__close" aria-label="<?php esc_attr_e( 'Close', 'top-and-bottom-popup-resenje' ); ?>">&times;</button>
+		<div id="<?php echo esc_attr( 'popup-resenje-' . $pos ); ?>" class="<?php echo esc_attr( $classes ); ?>" role="dialog" aria-label="<?php echo esc_attr( 'top' === $pos ? __( 'Top popup', 'resenje-top-bottom-popup' ) : __( 'Bottom popup', 'resenje-top-bottom-popup' ) ); ?>" hidden>
+			<button type="button" class="popup-resenje__close" aria-label="<?php esc_attr_e( 'Close', 'resenje-top-bottom-popup' ); ?>">&times;</button>
 			<div class="popup-resenje__content"><?php echo wp_kses_post( $popup['content'] ); ?></div>
 		</div>
 		<?php

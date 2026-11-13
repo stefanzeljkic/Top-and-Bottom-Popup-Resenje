@@ -1,4 +1,4 @@
-/* Top and Bottom Popup - Resenje: base layout. Per-popup sizes and colors are added inline from the settings. */
+/* Resenje Top and Bottom Popup: base layout. Per-popup sizes and colors are added inline from the settings. */
 .popup-resenje {
 	position: fixed;
 	z-index: 9999;

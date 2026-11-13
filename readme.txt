@@ -1,11 +1,11 @@
-=== Top and Bottom Popup - Resenje ===
+=== Resenje Top and Bottom Popup ===
 Contributors: stefanzeljkic
 Donate link: https://buymeacoffee.com/stefanzeljkic
 Tags: popup, top popup, bottom popup, announcement, notification bar
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Two independent popups, at the top and at the bottom of the page, with your own 
 
 == Description ==
 
-Top and Bottom Popup - Resenje shows a small popup at the top and/or at the bottom of every front-end page. Use it for announcements, promotions, newsletter links or any short message.
+Resenje Top and Bottom Popup shows a small popup at the top and/or at the bottom of every front-end page. Use it for announcements, promotions, newsletter links or any short message.
 
 Each popup has its own settings:
 
@@ -30,7 +30,7 @@ The plugin loads its small CSS and JavaScript files only when at least one popup
 
 == Installation ==
 
-1. Upload the `top-and-bottom-popup-resenje` folder to the `/wp-content/plugins/` directory, or install the plugin through the 'Plugins' screen in WordPress.
+1. Upload the `resenje-top-bottom-popup` folder to the `/wp-content/plugins/` directory, or install the plugin through the 'Plugins' screen in WordPress.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Open "Popup Resenje" in the admin menu, configure the top and/or bottom popup and save.
 
@@ -56,17 +56,23 @@ That is intended: after closing, the popup stays hidden in that browser for the 
 
 == Changelog ==
 
+= 1.1.1 =
+* Renamed to "Resenje Top and Bottom Popup" (slug resenje-top-bottom-popup). Settings are kept.
+
 = 1.1.0 =
 * CSS and JavaScript are loaded with wp_enqueue_style() / wp_enqueue_script(); per-popup styles use wp_add_inline_style().
 * Settings use the Settings API (register_setting() with a sanitize callback); size values are validated.
 * All output is escaped; direct file access is blocked.
-* Main file renamed to top-and-bottom-popup-resenje.php; added uninstall cleanup and a Settings link.
+* Main file renamed to match the plugin slug; added uninstall cleanup and a Settings link.
 * Close button is a real button; works when localStorage is unavailable.
 
 = 1.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+New plugin name; no functional changes.
 
 = 1.1.0 =
 Security and standards update. Settings from 1.0 are read automatically; save them once to store them in the new format.

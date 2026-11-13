@@ -1,4 +1,4 @@
-# Top and Bottom Popup - Rešenje 🎯
+# Rešenje Top and Bottom Popup 🎯
 
 A lightweight and flexible WordPress plugin for displaying **custom popups** at the **top** and **bottom** of your site. Each popup can have its own content, position, styles, and display timing.
 
@@ -22,7 +22,7 @@ A lightweight and flexible WordPress plugin for displaying **custom popups** at 
 
 ## ⚙️ How to Use
 
-1. Install the plugin (upload `top-and-bottom-popup-resenje.zip` under Plugins → Add New → Upload) and activate it.
+1. Install the plugin (upload `resenje-top-bottom-popup.zip` under Plugins → Add New → Upload) and activate it.
 2. Go to `Popup Resenje` in the left admin menu.
 3. Configure the **Top Popup** and/or **Bottom Popup**:
    - Enable/Disable
@@ -49,7 +49,7 @@ Popups will appear automatically on the front-end based on your configuration.
 
 Contributions, bug reports, and feature suggestions are welcome via GitHub issues or pull requests.
 
-Build the installable zip with `bash build-zip.sh` → `dist/top-and-bottom-popup-resenje.zip`.
+Build the installable zip with `bash build-zip.sh` → `dist/resenje-top-bottom-popup.zip`.
 
 ---
 ## 📄 License

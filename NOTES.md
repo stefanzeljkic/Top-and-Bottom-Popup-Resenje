@@ -18,3 +18,13 @@
 - 2026-11-08: SUBMITTED as a NEW submission (old one was closed). Automated scan: Pass. Slug top-and-bottom-popup-resenje, version 1.1.0, status Awaiting Review (~655 in queue, 1–10 days). Review mail goes to stefan.zeljkic@resenje.rs ("Review in Progress: Top and Bottom Popup – Resenje"). Possible objection: Guideline 18 (many popup plugins).
 - 2026-11-08: pushed to main + GitHub release 1.1.0 (zip asset) on Stefan's ok. Next: wait for the WordPress.org review mail, fix whatever they ask, re-upload on the same page.
 - Test stack on CT 270: `cd /opt/tbp && docker compose down -v` when no longer needed.
+
+## 2026-11-13 — WordPress.org review round 2: name
+- Status page showed "waiting on action from you"; Outlook (classic, COM) mail of 2026-11-12 "Review in Progress: Top and Bottom Popup – Resenje"
+  (Review ID AUTOPREREVIEW TRM ...12Nov26): only issue = name too generic ("Top and Bottom Popup" first, distinctive term last).
+- Renamed to "Resenje Top and Bottom Popup", slug/text domain/main file resenje-top-bottom-popup (AI suggestion from the mail), version 1.1.1.
+  Option name popup_resenje_settings unchanged → settings kept.
+- Tests (CT 270, /opt/rsm site A): install + activate 1.1.1, existing settings shown on the front end, Plugin Check no errors, PHPCS (WPCS 3 +
+  PHPCompatibilityWP 7.0+) clean. Local commit only.
+- Next (needs Stefan's ok): upload dist/resenje-top-bottom-popup.zip on the "Add your plugin" page, reply to the 2026-11-12 mail requesting
+  the new slug "resenje-top-bottom-popup", push + GitHub release 1.1.1 (repo name may stay).

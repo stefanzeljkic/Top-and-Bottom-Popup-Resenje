@@ -1,7 +1,7 @@
 /**
- * Top and Bottom Popup - Resenje: shows each popup unless the visitor closed it within the configured interval.
+ * Resenje Top and Bottom Popup: shows each popup unless the visitor closed it within the configured interval.
  *
- * @package TopAndBottomPopupResenje
+ * @package ResenjeTopBottomPopup
  */
 
 ( function () {

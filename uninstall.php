@@ -2,7 +2,7 @@
 /**
  * Removes the plugin settings when the plugin is deleted.
  *
- * @package TopAndBottomPopupResenje
+ * @package ResenjeTopBottomPopup
  */
 
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
