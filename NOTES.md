@@ -26,5 +26,5 @@
   Option name popup_resenje_settings unchanged → settings kept.
 - Tests (CT 270, /opt/rsm site A): install + activate 1.1.1, existing settings shown on the front end, Plugin Check no errors, PHPCS (WPCS 3 +
   PHPCompatibilityWP 7.0+) clean. Local commit only.
-- Next (needs Stefan's ok): upload dist/resenje-top-bottom-popup.zip on the "Add your plugin" page, reply to the 2026-11-12 mail requesting
-  the new slug "resenje-top-bottom-popup", push + GitHub release 1.1.1 (repo name may stay).
+- Done 2026-11-13 on Stefan's ok: 1.1.1 zip uploaded ("New version of Resenje Top and Bottom Popup uploaded for review"), reply sent from Outlook
+  (stefan.zeljkic@resenje.rs, 17:21) requesting slug resenje-top-bottom-popup, pushed + GitHub release 1.1.1. Now waiting for the reviewer.
