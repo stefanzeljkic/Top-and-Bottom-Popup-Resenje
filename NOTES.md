@@ -28,3 +28,9 @@
   PHPCompatibilityWP 7.0+) clean. Local commit only.
 - Done 2026-11-13 on Stefan's ok: 1.1.1 zip uploaded ("New version of Resenje Top and Bottom Popup uploaded for review"), reply sent from Outlook
   (stefan.zeljkic@resenje.rs, 17:21) requesting slug resenje-top-bottom-popup, pushed + GitHub release 1.1.1. Now waiting for the reviewer.
+
+## 2026-11-16 — APPROVED on WordPress.org
+- Mail "APPROVED resenje-top-bottom-popup/stefanzeljkic/12Nov26/T2 16Nov26": slug resenje-top-bottom-popup, SVN https://plugins.svn.wordpress.org/resenje-top-bottom-popup (user stefanzeljkic; SVN password is separate, set by Stefan in profile → Account & Security).
+- No svn client on the PC (no admin) → working copy prepared in CT 270: /opt/wporg/rtbp-svn (trunk + tags/1.1.1 added, alpine:3 + subversion in Docker).
+  Stefan commits himself (password prompt): `ssh -t -i C:/Users/Mili/Ai/vm/keys/lab_ed25519 root@192.168.101.106 "pct exec 270 -- /opt/wporg/commit-rtbp.sh"`.
+- Open: icon/banner in SVN /assets (none yet); readme lists 3 screenshots that are not uploaded.
