@@ -34,3 +34,6 @@
 - No svn client on the PC (no admin) → working copy prepared in CT 270: /opt/wporg/rtbp-svn (trunk + tags/1.1.1 added, alpine:3 + subversion in Docker).
   Stefan commits himself (password prompt): `ssh -t -i C:/Users/Mili/Ai/vm/keys/lab_ed25519 root@192.168.101.106 "pct exec 270 -- /opt/wporg/commit-rtbp.sh"`.
 - Open: icon/banner in SVN /assets (none yet); readme lists 3 screenshots that are not uploaded.
+- 2026-11-17: icon + banner (variant "Ocean", chosen by Stefan) committed to SVN /assets, r3808228. Artwork source: C:\Users\Mili\Ai\resenje-brand\make.py
+  (SVG generator, PNGs rendered with rsvg-convert in CT 270 /opt/wporg/brand). PVE host has no /dev/pts (ssh -t fails), so SVN commits run via
+  `ssh -t root@192.168.101.132 /opt/wporg/<script>.sh` (CT 270 directly).
